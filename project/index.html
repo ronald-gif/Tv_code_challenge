@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+
+       <!-- <div v-if="buttonLight" class="mybulb">
+        <video width="500" height="340" autoplay muted controls>
+          <source :src="shovetv" type="video/mp4" >
+        </video>
+      </div> -->
+
+      <div v-if="!tvOn" class="tvshowcase">
+        <!-- <img  alt=""> -->
+      </div>
+
+      <div v-else="tvOn" class="tvshowcase">
+        <img :src="station" alt="">
+      </div>
+
+      <div v-else-if="tvon" class="tvshowcase">
+        <img :src="stations[2]" alt="">
+      </div>
+
+      <!-- <div v-else-if="buttonLight" class="mybulb">
+        <img :src="bulbOff" alt="" >
+      </div>
+
+      <div v-else v-if="buttonLight" class="mytv">
+        <img :src="tv" alt="">
+      </div> -->
+
+
+      <button v-on:click="power">on</button>
+      <button v-on:click="onChannel">next</button>
+      <button v-on:click="prevChannel">prev</button>
+      <!-- <button v-on:click="showtv =!showtv">change light</button>  -->
+      <div class="nav-bar"></div>
+
+      
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <!-- <img v-bind:src="image"> -->
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+            <!-- <p v-if="inStock">In Stock</p> -->
+            <!-- <p v-else>Out of Stock</p> -->
+            <ul>
+              <li v-for="detail in details">{{detail}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- <iframe width="560" height="315" src="showtv allowfullscreen></iframe> -->
+    </div>
+
+    <!-- Import App -->
+    <script src="/assets/main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
